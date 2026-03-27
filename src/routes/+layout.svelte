@@ -1,0 +1,14 @@
+<script lang="ts">
+	import './layout.css';
+	import favicon from '$lib/assets/favicon.svg';
+	import { DarkMode } from 'flowbite-svelte';
+
+	let { children } = $props();
+</script>
+
+<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+
+<div class="dark:bg-gray-900">
+	<DarkMode />
+	{@render children()}
+</div>
