@@ -33,7 +33,7 @@ jobs:
         run: pnpm i
 
       - name: Build
-        run: PUBLIC_WEB3FORMS_ACCESS_KEY=${{ PUBLIC_WEB3FORMS_ACCESS_KEY }} pnpm build
+        run: PUBLIC_WEB3FORMS_ACCESS_KEY=${{ env.PUBLIC_WEB3FORMS_ACCESS_KEY }} pnpm build
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
