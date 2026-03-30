@@ -11,6 +11,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     name: Build and Deploy
+    environment:
+      name: production
+      deployment: false
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6
