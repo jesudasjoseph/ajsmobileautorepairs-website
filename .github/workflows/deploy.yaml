@@ -14,8 +14,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6
-        with:
-          fetch_depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v5
@@ -40,4 +38,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy build --project-name={{ secrets.CLOUDFLARE_PROJECT_NAME }} --branch=main
+          command: pages deploy build --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }} --branch=main
