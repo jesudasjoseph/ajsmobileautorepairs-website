@@ -31,11 +31,13 @@ jobs:
         run: pnpm i
 
       - name: Build
-        run: PUBLIC_WEB3FORMS_ACCESS_KEY=${{ env.PUBLIC_WEB3FORMS_ACCESS_KEY }} pnpm build
+        env:
+          PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ env.PUBLIC_WEB3FORMS_ACCESS_KEY }}
+        run: pnpm build
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy build --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }} --branch=main
+          command: pages deploy ./build --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }} --branch=main
