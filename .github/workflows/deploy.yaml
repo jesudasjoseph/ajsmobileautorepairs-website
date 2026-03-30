@@ -13,17 +13,17 @@ jobs:
     name: Build and Deploy
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch_depth: 0
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
         with:
           version: 10
 
       - name: Set up Node 24
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: 'pnpm'
@@ -33,7 +33,7 @@ jobs:
         run: pnpm i
 
       - name: Build
-        run: pnpm build
+        run: PUBLIC_WEB3FORMS_ACCESS_KEY=${{ PUBLIC_WEB3FORMS_ACCESS_KEY }} pnpm build
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
