@@ -7,7 +7,8 @@
 
 	function handleSubmit(event: Event) {
 		event.preventDefault();
-		const formData = new FormData(event.target as HTMLFormElement);
+		const form = event.target as HTMLFormElement;
+		const formData = new FormData(form);
 
 		const hcaptcha = formData.get('h-captcha-response');
 
@@ -35,6 +36,7 @@
 			})
 			.finally(() => {
 				submitted = true;
+				form.reset();
 			});
 	}
 </script>
