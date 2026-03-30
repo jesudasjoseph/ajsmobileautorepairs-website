@@ -16,8 +16,6 @@
 			return;
 		}
 
-		formData.delete('h-captcha-response');
-
 		fetch('https://api.web3forms.com/submit', {
 			method: 'POST',
 			body: formData
@@ -28,8 +26,8 @@
 					formError = null;
 				} else {
 					formError = 'submission';
+					console.error(data.message);
 				}
-				console.error(data.message);
 			})
 			.catch((e) => {
 				console.error(e);
