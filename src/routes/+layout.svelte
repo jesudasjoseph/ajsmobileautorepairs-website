@@ -7,6 +7,6 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="min-h-dvh dark p-4 dark:bg-gray-900 dark:text-white">
+<div class="min-h-dvh p-4 md:m-auto md:max-w-225">
 	{@render children()}
 </div>
