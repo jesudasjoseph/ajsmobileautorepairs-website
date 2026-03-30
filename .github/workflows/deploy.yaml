@@ -35,7 +35,7 @@ jobs:
 
       - name: Build
         env:
-          PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ env.PUBLIC_WEB3FORMS_ACCESS_KEY }}
+          PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ vars.PUBLIC_WEB3FORMS_ACCESS_KEY }}
         run: pnpm build
 
       - name: Deploy
@@ -43,4 +43,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./build --project-name=${{ env.CLOUDFLARE_PROJECT_NAME }} --branch=main
+          command: pages deploy ./build --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} --branch=main
