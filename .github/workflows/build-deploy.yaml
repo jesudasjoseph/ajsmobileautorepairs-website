@@ -15,7 +15,7 @@ jobs:
       name: production
       deployment: false
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     steps:
       - name: Checkout Code
