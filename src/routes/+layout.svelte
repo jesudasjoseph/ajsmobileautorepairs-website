@@ -7,9 +7,11 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="relative min-h-dvh p-4 md:m-auto md:max-w-225">
-	{@render children()}
-	<footer class="absolute right-0 bottom-0 left-0 p-4 text-center text-sm text-gray-500">
+<div class="flex min-h-dvh flex-col justify-between">
+	<div class="p-4 md:mx-auto md:max-w-225">
+		{@render children()}
+	</div>
+	<footer class="md:px-auto px-4 py-4 text-center text-sm dark:bg-gray-800 dark:text-gray-500">
 		&copy; {new Date().getFullYear()} Jesudas Joseph. All rights reserved.
 	</footer>
 </div>
