@@ -1,5 +1,6 @@
 ## ENV
 
 ```
-PUBLIC_WEB3FORMS_ACCESS_KEY=Web3 Form Access Key
+PUBLIC_SENTRY_DSN="Sentry DSN"
+PUBLIC_WEB3FORMS_ACCESS_KEY="Web3 Form Access Key"
 ```

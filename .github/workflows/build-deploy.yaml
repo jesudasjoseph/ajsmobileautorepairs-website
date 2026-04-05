@@ -39,6 +39,7 @@ jobs:
       - name: Build
         env:
           PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ vars.PUBLIC_WEB3FORMS_ACCESS_KEY }}
+          PUBLIC_SENTRY_DSN: ${{ vars.PUBLIC_SENTRY_DSN }}
         run: pnpm build
 
       - name: Upload static files as artifact
