@@ -70,7 +70,6 @@
 		onsubmit={handleSubmit}
 		class="rounded-lg border border-primary-400 p-4 dark:border-gray-700 dark:bg-gray-800"
 	>
-		<h2 class="mb-4 text-xl font-bold">Request Services</h2>
 		<input type="hidden" name="access_key" value={env.PUBLIC_WEB3FORMS_ACCESS_KEY} />
 		<div>
 			<div class="flex w-full flex-col gap-4 md:flex-row">
