@@ -28,7 +28,7 @@
 
 <p class="mb-2">
 	Minimum service call fee is <strong>$50</strong>. I can travel up to 5 miles for free, and then I
-	will charge a <strong>$1.5/mile</strong> after that.
+	will charge a <strong>$2.5/mile</strong> after that.
 </p>
 
 <p class="mb-4">
