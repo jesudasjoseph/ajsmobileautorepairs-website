@@ -1,8 +1,13 @@
 <script lang="ts">
 	import './layout.css';
+	import Favicon from '$lib/assets/favicon.png';
 
 	let { children } = $props();
 </script>
+
+<svelte:head>
+	<link rel="icon" type="image/svg+xml" href={Favicon} />
+</svelte:head>
 
 <div class="flex min-h-dvh flex-col justify-between">
 	<div class="px-4 pb-4 md:mx-auto md:max-w-225">
