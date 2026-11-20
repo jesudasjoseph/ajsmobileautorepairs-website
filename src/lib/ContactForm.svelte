@@ -51,8 +51,8 @@
 	type: string = 'text',
 	required: boolean = false
 )}
-	<Label for={name}>{label}</Label>
-	<Input {name} id={name} {type} {required} class="mb-2" />
+	<Label for={name} class="text-base">{label}</Label>
+	<Input {name} id={name} {type} {required} class="mb-3" />
 {/snippet}
 
 {#if submitted}
@@ -72,22 +72,25 @@
 	>
 		<input type="hidden" name="access_key" value={env.PUBLIC_WEB3FORMS_ACCESS_KEY} />
 		<div>
-			<div class="flex w-full flex-col gap-4 md:flex-row">
+			<Label for="description" class="mb-2 text-xl font-bold">What can I help you with?</Label>
+			<Textarea name="description" id="description" required class="mb-8 min-h-30 w-full" />
+			<div class="mb-6 flex w-full flex-col gap-4 md:flex-row md:gap-8">
 				<fieldset class="grow">
-					<legend class="mb-2 font-bold">Contact Info</legend>
+					<legend class="mb-4 text-xl font-bold">Vehicle</legend>
+					{@render inputwithlabel('Year', 'year', 'text', true)}
+					{@render inputwithlabel('Make', 'make', 'text', true)}
+					{@render inputwithlabel('Model', 'model', 'text', true)}
+					{@render inputwithlabel('Mileage (Optional)', 'mileage', 'text')}
+					{@render inputwithlabel('Engine Size (Optional)', 'engine', 'text')}
+				</fieldset>
+				<fieldset class="grow">
+					<legend class="mb-4 text-xl font-bold">Contact</legend>
 					{@render inputwithlabel('Name', 'name', 'text', true)}
 					{@render inputwithlabel('Phone', 'phone', 'tel', true)}
 					{@render inputwithlabel('Email (Optional)', 'email', 'email')}
-				</fieldset>
-				<fieldset class="grow">
-					<legend class="mb-2 font-bold">Car Info</legend>
-					{@render inputwithlabel('Make (Optional)', 'make', 'text')}
-					{@render inputwithlabel('Model (Optional)', 'model', 'text')}
-					{@render inputwithlabel('Year (Optional)', 'year', 'text')}
+					{@render inputwithlabel('Urgency (Optional)', 'urgency', 'text')}
 				</fieldset>
 			</div>
-			<Label for="description">What can I help you with?</Label>
-			<Textarea name="description" id="description" required class="mb-2 min-h-30 w-full" />
 		</div>
 
 		<div class="mb-2 flex flex-col items-center gap-2">
