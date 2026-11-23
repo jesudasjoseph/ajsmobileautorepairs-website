@@ -6,7 +6,15 @@
 	//const services = ['Oil Changes', 'Tune Ups', 'Inspections'];
 </script>
 
-<svelte:head></svelte:head>
+<svelte:head>
+	<title>Ajs Mobile Auto Repairs</title>
+	<meta
+		name="description"
+		content="Need a reliable mobile mechanic? Look no further, AJ can come to you and solve many of your vehicle issues."
+	/>
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://ajsmobileautorepairs.com/" />
+</svelte:head>
 <h1 class="bg-gray-900 py-4 text-center text-3xl font-bold md:text-6xl">
 	AJ's Mobile Auto Repairs
 </h1>
